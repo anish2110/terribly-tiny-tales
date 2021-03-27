@@ -47,27 +47,27 @@ Once it is resolved the request is returned with array of result as the payload.
 
 ## Test Cases
 
-# 1st Test Case - `5,6,9,12,18,20,25,30,32,36,37,38,40,42,45,47,49,50`
+### 1st Test Case - `5,6,9,12,18,20,25,30,32,36,37,38,40,42,45,47,49,50`
 
 Output - 
 
 ![image](https://user-images.githubusercontent.com/55437843/112727138-f7095a00-8f46-11eb-8221-a8c7b3dc5de9.png)
 
 
-# 2nd Test Case - `2,4546,7658,55,77,234235`
+### 2nd Test Case - `2,4546,7658,55,77,234235`
 
 Output - 
 
 ![image](https://user-images.githubusercontent.com/55437843/112727308-fae9ac00-8f47-11eb-8684-08d7ec745000.png)
 
-# 3rd Test Case - `1234567890`
+### 3rd Test Case - `1234567890`
 
 Output - 
 
 ![image](https://user-images.githubusercontent.com/55437843/112727339-25d40000-8f48-11eb-873c-2d7b56e9a912.png)
 
 
-# 4th Test Case - ``
+### 4th Test Case - ``
 
 Output- 
 
