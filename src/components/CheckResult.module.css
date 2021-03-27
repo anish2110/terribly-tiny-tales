@@ -1,0 +1,106 @@
+.main{
+	background: #000000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	padding-bottom: 10em;
+}
+
+.heading{
+	text-align: center;
+	color: #fff;
+	padding-top: 3em;
+}
+
+.input_box{
+	display: grid;
+	justify-content: center;
+	margin: 5em auto 2em;
+}
+
+input{
+	width: 20em;
+	height: 2.5em;
+}
+
+input:focus{
+	outline: none;
+}
+
+.submit_button{
+	display: block;
+	margin: 2em auto;
+}
+
+button{
+	border: none;
+	width: 7em;
+	height: 2.5em;
+	border-radius: 20px;
+	color: #f00;
+	background-color: #fff;
+	font-weight: 600;
+	transition: all 0.35s;
+}
+
+button:hover{
+	background-color: #f00;
+	color: #fff;
+	transition: all 0.35s;
+}
+
+.loader{
+	display: flex;
+	justify-content: center;
+}
+
+svg path,
+svg rect{
+    fill: #FF6700;
+}
+
+.loading h4{
+	margin-top: 1em;
+	text-align: center;
+	color: #fff;
+}
+
+.result_table{
+	color: #fff;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.result_table, th, td{
+	border: 1px solid #fff;
+}
+
+.result_table th{
+	width: 12em;
+}
+
+.row_heading{
+	font-size: 22px;
+	padding: 10px!important;
+}
+
+.data{
+	padding: 10px;
+}
+
+@media only screen and (max-width: 550px){
+	input{
+		width: 15em;
+	}
+
+	.result_table th{
+		width: 9em;
+	}
+
+	.row_heading{
+		font-size: 18px;
+	}
+}
