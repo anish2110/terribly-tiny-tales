@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Result Checking
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project created by Anish Khandelwal.
 
-## Available Scripts
+## Libraries Used
 
-In the project directory, you can run:
+In the project, I used the following libraries -
 
-### `npm start`
+### react
+### react-dom
+### react-router-dom
+### axios
+### body-parser
+### express
+### bootstrap
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Frontend
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+App.js file handles the client side routing. Since single page has to be displayed, a single route is defined with a `Redirect` set to redirect all the unknown routes back to home.
 
-### `npm test`
+The App.js file calls a functional component `CheckResult` which has the main logic defined in it.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`CheckResult` displays an input box for the user to enter the roll numbers and return a table with the result displayed along with roll numbers.
 
-### `npm run build`
+The `input` takes the rool numbers separeted wuth `,`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The input is split and stored as an array and cleaned using `trim()` method.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Using `axios` the array of roll numbers is passed to the backend.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The result received from the backend is then looped through `map()` function inside the JSX.
 
-### `npm run eject`
+If no input is given and the submit button is pressed, the input box shines up and displays the error message.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Backend
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Using `express` the incoming request is caught and further passed on to the external API.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To get the result from the external API `axios` is used.
 
-## Learn More
+Each unique request is passed through a loop with the help of `Promise`.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use of `Promise.all()` helps in resolving the pending promise and return the result after the whole array is resolved.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once it is resolved the request is returned with array of result as the payload.
 
-### Code Splitting
+## Test Cases
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# 1st Test Case - `5,6,9,12,18,20,25,30,32,36,37,38,40,42,45,47,49,50`
 
-### Analyzing the Bundle Size
+Output - 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![image](https://user-images.githubusercontent.com/55437843/112727138-f7095a00-8f46-11eb-8221-a8c7b3dc5de9.png)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 2nd Test Case - `2,4546,7658,55,77,234235`
 
-### Advanced Configuration
+Output - 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![image](https://user-images.githubusercontent.com/55437843/112727308-fae9ac00-8f47-11eb-8684-08d7ec745000.png)
 
-### Deployment
+# 3rd Test Case - `1234567890`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Output - 
 
-### `npm run build` fails to minify
+![image](https://user-images.githubusercontent.com/55437843/112727339-25d40000-8f48-11eb-873c-2d7b56e9a912.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# 4th Test Case - ``
+
+Output- 
+
+![image](https://user-images.githubusercontent.com/55437843/112727368-397f6680-8f48-11eb-97a6-a5088221148c.png)
+
+
